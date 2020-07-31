@@ -1,13 +1,11 @@
-#include "mainform.h"
+#include "qtserver.h"
 #include <QApplication>
 
 int main(int argc, char *argv[])
 {
     QApplication a(argc, argv);
-    MainForm w;
-    QtClient Qc;
+    QtServer w;
     w.show();
-    Qc.show();
 
     return a.exec();
 }
