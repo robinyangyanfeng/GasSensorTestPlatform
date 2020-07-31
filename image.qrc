@@ -1,0 +1,12 @@
+<RCC>
+    <qresource prefix="/">
+        <file>Image/气体.png</file>
+        <file>Image/帮助 (1).png</file>
+        <file>Image/帮助.png</file>
+        <file>Image/开始.png</file>
+        <file>Image/模拟.png</file>
+        <file>Image/停止.png</file>
+        <file>Image/退出.png</file>
+        <file>Image/重置.png</file>
+    </qresource>
+</RCC>

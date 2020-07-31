@@ -1,0 +1,62 @@
+#ifndef CLIENT_H
+#define CLIENT_H
+
+#include <QtNetwork>
+#include <QFile>
+
+class QtClient : public QWidget
+{
+    Q_OBJECT
+public:
+    QtClient(QWidget *parent = 0, Qt::WFlags flags = 0);
+    ~QtClient();
+    
+    void initTCP();
+    void newconnect();
+    
+    private slots:
+    ///connect server
+    void connectServer();
+    ///disconnect server
+    void disconnectServer();
+    ///recieve data from server
+    void recieveData();
+    ///send data to server
+    void sendData();
+    
+    ///selectfile
+    void selectFile();
+    ///sendfile
+    void sendFile();
+    ///renew sending process
+    void updateFileProgress(qint64);
+    ///update file progress
+    void updateFileProgress();
+    
+private:
+    Ui:QtClientClass ui;
+    QTcpSocket *tcpScoket;
+    QTcpSocket *fileSocket;
+    
+    ///send file
+    QFile *localFile;
+    ///size of file
+    qint64 totalBytes;
+    qint64 bytesWritten;
+    qint64 bytetoWrite;
+    qint64 filenameSize;
+    qint64 bytesReceived;
+    ///size of single data
+    qint64 perDataSize;
+    QString filename;
+    ///data buff
+    QByteArray inBlock;
+    QByteArray outBlock;
+    
+    ///system time
+    QDateTime current_date_time;
+    QString str_date_time;
+    
+};
+
+#endif // CLIENT_H
